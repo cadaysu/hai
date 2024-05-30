@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+    <Script>
+    function TinhToan() // Khai báo một hàm tên là TinhToan
+        {
+            let tl = parseInt(idtienluong.value);//Chuyển text sang interger
+            let xl = document.getElementById("idxeploai").value;
+            let heso = 0;
+     
+            if(xl == 'A')
+                heso = 2;
+
+            if(xl == 'B')
+                heso = 1.8;
+
+            if(xl == 'C')
+                heso = 1.2;
+
+            if(xl == 'D')
+                heso = 0.8;
+           
+            let ketqua = tl * heso;                         
+            document.getElementById("idthongbao").innerHTML = ketqua;
+        }
+
+    </Script>
+</head>
+
+<body>
+    <center>
+        <label style="color: red;"><b>Tính Tiền Thưởng Cuối Năm</b></label>
+        <p></p>
+        <table style="width:450px;background-color: #F3C2C2;">
+            <tr>
+                <td>Tiền lương</td>
+                <td><input type=text id="idtienluong" name="dai" size="45"></td>
+            </tr>
+            <tr>
+                <td>Xếp loại</td>
+                <td>
+                    <select name="idxeploai" id="idxeploai">
+                        <option value="A">Loại A</option>
+                        <option value="B">Loại B</option>
+                        <option value="C">Loại C</option>
+                        <option value="D">Loại D</option>
+                      </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type=button name=welcome value="Tính" onclick="TinhToan()">
+                </td>              
+            </tr>
+            <tr cos>
+                <td colspan="2" style="text-align: center;">
+                    <label id="idthongbao">Thông báo</label>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>
